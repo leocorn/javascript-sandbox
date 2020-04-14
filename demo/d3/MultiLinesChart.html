@@ -27,12 +27,14 @@ var svg = d3.select("svg"),
 var parseTime = d3.timeParse("%Y%m%d");
 
 // set range for x axis, the date
+// get scales for x and y axis.
 var x = d3.scaleTime().range([0, width]),
     // set the range for y axis, the temperature.
     y = d3.scaleLinear().range([height, 0]),
     // set the range for z, basically the color scheme.
     z = d3.scaleOrdinal(d3.schemeCategory10);
 
+// curve path (lines) based on date and temperature.
 var line = d3.line()
     .curve(d3.curveBasis)
     .x(function(d) { return x(d.date); })
