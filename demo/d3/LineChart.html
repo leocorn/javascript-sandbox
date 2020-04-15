@@ -78,7 +78,7 @@ d3.csv("data/lines.csv", function(d) {
       .attr("d", line);
 
   var totalLength = path.node().getTotalLength();
-  //console.log(totalLength);
+  console.log("total length: ", totalLength);
 
   // the stroke-dasharray and stroke-dashoffset are the 
   // attributes to help transition.
